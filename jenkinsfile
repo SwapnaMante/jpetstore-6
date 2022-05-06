@@ -7,14 +7,13 @@ environment {
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
     }
+	tools { 
+        maven 'Maven 3.8.5' 
+         
+    }
 stages {
         
-        stage ('Prep') {
-            steps {
-                checkout scm
-            }
-		}
-  stage('Print') {
+  stage('PrintVariables') {
             steps {
 				echo "${ArtifactID}"
                 echo "${VERSION}"
