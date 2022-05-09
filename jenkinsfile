@@ -23,7 +23,7 @@ stages {
 stage('Build') {
             steps {
 			    echo "M2_HOME = ${M2_HOME}"
-               bat 'mvn -B -DskipTests clean package'
+               bat 'mvn clean package'
             }
         }
 		
