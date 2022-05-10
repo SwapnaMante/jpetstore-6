@@ -6,10 +6,12 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	SCANNER_HOME = tool 'SonarScanner-4.7'
-	MAVEN_HOME = tool 'Maven 3.8.5'
 	PROJECT_NAME = "jpetstore"
     }
+	tools{
+	Sonarscanner 'SonarScanner-4.7'
+	Maven 'Maven 3.8.5'
+	}
 	
 stages {
         
@@ -36,6 +38,5 @@ stages {
     }
 	
 	}
-}
 }
 }
