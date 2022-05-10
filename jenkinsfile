@@ -9,7 +9,6 @@ environment {
 	PROJECT_NAME = "jpetstore"
     }
 	tools{
-	sonarscanner 'SonarScanner-4.7'
 	maven 'Maven 3.8.5'
 	}
 	
@@ -29,9 +28,12 @@ stages {
             }
         }
   stage('Sonar Analysis')	{
+  environment{
+          scannerHome = tool 'SonarqubeScanner'
+		  }
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
-				bat '''$SCANNER_HOME/bin/sonar-scanner \
+				bat '''$scannerHome/bin/sonar-scanner \
 			    -Dsonar.java.binaries=build/classes/java/ \
 			    -Dsonar.projectKey=$PROJECT_NAME \
 			    -Dsonar.sources=.'''
