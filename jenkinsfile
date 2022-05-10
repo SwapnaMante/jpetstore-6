@@ -27,9 +27,9 @@ stages {
             }
         }
   stage('Sonar Analysis')	{
-  
+  environment{
           scannerHome = tool 'SonarqubeScanner'
-		  
+		  }
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
 				bat '''$scannerHome/bin/sonar-scanner \
