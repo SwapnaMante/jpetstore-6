@@ -31,10 +31,10 @@ stages {
   
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
-				bat '''$scannerHome/sonar-scanner \
+				bat """${scannerHome}/sonar-scanner \
 			    -Dsonar.java.binaries=build/classes/java/ \
 			    -Dsonar.projectKey=$PROJECT_NAME \
-			    -Dsonar.sources=.'''
+			    -Dsonar.sources=."""
     }
 	
 	}
