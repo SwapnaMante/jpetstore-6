@@ -9,8 +9,8 @@ environment {
 	PROJECT_NAME = "jpetstore"
     }
 	tools{
-	Sonarscanner 'SonarScanner-4.7'
-	Maven 'Maven 3.8.5'
+	sonarscanner 'SonarScanner-4.7'
+	maven 'Maven 3.8.5'
 	}
 	
 stages {
