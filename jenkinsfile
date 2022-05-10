@@ -10,9 +10,7 @@ environment {
     }
 	tools{
 	maven 'Maven 3.8.5'
-	sonarscanner 'SonarqubeScanner'
 	}
-	
 stages {
         
   stage('PrintVariables') {
@@ -29,10 +27,12 @@ stages {
             }
         }
   stage('Sonar Analysis')	{
- 
+  
+          scannerHome = tool 'SonarqubeScanner'
+		  
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
-				bat '''C:/Users/smante/OneDrive - Capgemini/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin/sonar-scanner \
+				bat '''$scannerHome/bin/sonar-scanner \
 			    -Dsonar.java.binaries=build/classes/java/ \
 			    -Dsonar.projectKey=$PROJECT_NAME \
 			    -Dsonar.sources=.'''
