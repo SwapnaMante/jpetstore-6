@@ -6,7 +6,7 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	SCANNER_HOME = C:\Users\smante\OneDrive - Capgemini\Documents\sonar-scanner\sonar-scanner-4.7.0.2747-windows
+	SCANNER_HOME = C:/Users/smante/OneDrive - Capgemini/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows
 	PROJECT_NAME = jpetstore
 	SCANNER_HOME = tool 'SonarScanner-4.7'
 	MAVEN_HOME = tool 'Maven 3.8.5'
