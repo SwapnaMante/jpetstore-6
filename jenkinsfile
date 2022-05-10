@@ -6,16 +6,11 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	SCANNER_HOME = C:/Users/smante/OneDrive - Capgemini/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows
-	PROJECT_NAME = jpetstore
 	SCANNER_HOME = tool 'SonarScanner-4.7'
 	MAVEN_HOME = tool 'Maven 3.8.5'
+	PROJECT_NAME = "jpetstore"
     }
-	tools { 
-        maven 'Maven 3.8.5' 
-		Sonarscanner 'SonarScanner-4.7'
-         
-    }
+	
 stages {
         
   stage('PrintVariables') {
@@ -25,19 +20,19 @@ stages {
             }
 
         }	
-stage('Build') {
+  stage('Build') {
             steps {
 			   
                bat 'mvn clean package'
             }
         }
-	stage('Sonar Analysis')	{
+  stage('Sonar Analysis')	{
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
 				bat '''$SCANNER_HOME/bin/sonar-scanner \
-			-Dsonar.java.binaries=build/classes/java/ \
-			-Dsonar.projectKey=$PROJECT_NAME \
-			-Dsonar.sources=.'''
+			    -Dsonar.java.binaries=build/classes/java/ \
+			    -Dsonar.projectKey=$PROJECT_NAME \
+			    -Dsonar.sources=.'''
     }
 	
 	}
