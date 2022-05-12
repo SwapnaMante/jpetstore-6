@@ -6,7 +6,7 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	PROJECT_NAME = "jpetstore"
+	PROJECT_NAME = "jpetstore-6"
 	scannerHome ="C:/Users/smante/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin"
 	NEXUS_VERSION = "nexus3"
     NEXUS_PROTOCOL = "http"
