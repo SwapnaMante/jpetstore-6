@@ -32,7 +32,7 @@ stages {
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
 				bat '''C:/Users/smante/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin/sonar-scanner \
-			    -Dsonar.java.binaries=build/classes/java/ \
+			    -Dsonar.java.binaries=src/main/java/ \
 			    -Dsonar.projectKey=$PROJECT_NAME \
 			    -Dsonar.sources=.'''
     }
