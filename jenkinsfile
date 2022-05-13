@@ -25,7 +25,7 @@ stages {
             }
 
         }	
-  stage('Build') {
+ /* stage('Build') {
             steps {
 			   
                bat 'mvn clean package'
@@ -42,7 +42,7 @@ stages {
 			    -Dsonar.sources=.'''
     }
 	
-	}
+	} */
 }
 stage("Publish to Nexus Repository Manager") {
             steps {
