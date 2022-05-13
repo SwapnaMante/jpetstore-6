@@ -9,7 +9,7 @@ environment {
 	scannerHome ="C:/Users/smante/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin"
 	NEXUS_VERSION = "nexus3"
     NEXUS_PROTOCOL = "http"
-    NEXUS_URL = "http://localhost:8081"
+    NEXUS_URL = "localhost:8081"
     NEXUS_REPOSITORY = "maven-nexus-repo"
     NEXUS_CREDENTIAL_ID = "Nexus"
     }
